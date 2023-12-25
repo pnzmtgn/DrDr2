@@ -12,10 +12,10 @@ def List(request):
         })
     return JsonResponse(specialty_json, safe=False)
 
-# def List_html(request):
-#     specialities = speciality.objects.all()
-#     specialities_json = {'Specialty':specialities}
-#     return render(request, 'Specialty/index.html', specialities_json)
+def List_html(request):
+    specialities = speciality.objects.all()
+    specialities_json = {'Specialty':specialities}
+    return render(request, 'Specialty/index.html', specialities_json)
 
 def List_SPC(request, specialty__name):
     doctors = doctor.objects.filter(Specialty__Name = specialty__name)
